@@ -1,4 +1,4 @@
-import { Routes, Route, Redirect } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Welcome from './pages/Welcome'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
@@ -9,7 +9,7 @@ function App() {
       <MainHeader/>
       <main>
         <Routes>
-          <Route path="/" element={<Welcome/>} />
+          <Route path="/" element={<Navigate to="/welcome" />} />
           {/* <Route path="/welcome/*" element={<Welcome/>} /> Use it if you want component contain nestroute info */}
           <Route path="/welcome" element={<Welcome/>} >
             <Route path='newUser' element={<p>"Welcome new user"</p>} />
